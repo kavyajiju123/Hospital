@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hospital Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	<style>
+        
+        h4 {text-align: center;
+    font-family: 'Times New Roman', Times, serif;}
+    
+        h5 {text-align: left;
+    font-family: 'Times New Roman', Times, serif;}
+
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+.form-control {text-align: left;
+    font-family: 'Times New Roman', Times, serif;}
+
+    .btn {text-align: center;
+    font-family: 'Times New Roman', Times, serif;}
+
+    img {
+  float: right;
+}
+
+body
+      {
+        background-image: url(https://media.istockphoto.com/photos/abstract-blue-cyan-background-picture-id995719694?b=1&k=20&m=995719694&s=170667a&w=0&h=bQ4Imx3qGb0-ZCPz5JIjyOWpgYENfVzbO3wR_pnNpYw=);font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+    
+    
+    </style>
+</head>
+<body>
+<br>
+	<div class="container">
+		<h4>Hospital Management System</h4>
+		
+		<h5>Save Patient Information</h5>
+		 <p><img src="https://image.freepik.com/free-vector/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical-help-emergency-architecture-healthcare-concept_74855-10130.jpg" alt="Pineapple" style="width:470px;height:470px;margin-left:5px;">
+
+		<form action="#" th:action="@{/saveHospital}" th:object="${hospital}"
+			method="POST">
+			<input type="text" th:field="*{firstName}"
+				placeholder="Patient First Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{lastName}"
+				placeholder="Ptient Last Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{email}"
+				placeholder="Patient Email" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{description}"
+				placeholder="Patient Description" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{contact}"
+				placeholder="Patient Contact" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{address}"
+				placeholder="Patient Address" class="form-control mb-4 col-4">
+				
+				<button type="submit" class="btn btn-info col-2"> Save Patient</button>
+		</form>
+		
+		
+		
+		<a th:href = "@{/}"> Back to Patient List</a>
+	</div>
+	<div class="footer">
+        <p>Hospital Management</p>
+      </div>
+</body>
+</html>
